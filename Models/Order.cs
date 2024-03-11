@@ -3,7 +3,7 @@
     public class Order
     {
         private int Id { get; set; }
-        private User User { get; set; }
-        private List<Product> Products { get; set; }
+        private string User { get; set; } = string.Empty;
+        private List<string> Products { get; set; }
     }
 }

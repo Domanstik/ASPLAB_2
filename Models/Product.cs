@@ -3,7 +3,7 @@
     public class Product
     {
         private string Name { get; set; } = string.Empty;
-        private Category Category {  get; set; }
+        private string Category { get; set; } = string.Empty;
         private int Prise { get; set; }
     }
 }
