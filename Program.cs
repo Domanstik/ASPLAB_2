@@ -1,4 +1,5 @@
 using ASPLAB_2.Data;
+using ASPLAB_2.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
