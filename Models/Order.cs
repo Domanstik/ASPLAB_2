@@ -5,7 +5,7 @@ namespace ASPLAB_2.Models
     public class Order
     {
         [Key] public int Id { get; set; }
-        private string User { get; set; } = string.Empty;
-        private int? ProductsCost { get; set; }
+        public string User { get; set; } = string.Empty;
+        public int? ProductsCost { get; set; }
     }
 }

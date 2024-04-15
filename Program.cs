@@ -1,7 +1,20 @@
+using ASPLAB_2.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
+// получаем строку подключения из файла конфигурации
+string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// добавляем контекст ApplicationContext в качестве сервиса в приложение
+builder.Services.AddDbContext<UserContext>(options => options.UseSqlServer(connection));
+builder.Services.AddDbContext<ProductContext>(options => options.UseSqlServer(connection));
+builder.Services.AddDbContext<OrderContext>(options => options.UseSqlServer(connection));
+builder.Services.AddDbContext<CategoryContext>(options => options.UseSqlServer(connection));
+
+
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(); 
 
 var app = builder.Build();
 
