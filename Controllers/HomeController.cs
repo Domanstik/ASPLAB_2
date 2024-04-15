@@ -1,8 +1,8 @@
-using ASPLAB_2.Models;
+﻿using Lab2CSharp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace ASPLAB_2.Controllers
+namespace Lab2CSharp.Controllers
 {
     public class HomeController : Controller
     {

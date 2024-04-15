@@ -1,8 +1,10 @@
-﻿namespace ASPLAB_2.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ASPLAB_2.Models
 {
     public class Category
     {
-        public int Id { get; set; }
+        [Key] public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
     }

@@ -1,4 +1,4 @@
-namespace ASPLAB_2.Models
+namespace Lab2CSharp.Models
 {
     public class ErrorViewModel
     {
