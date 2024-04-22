@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace ASPLAB_2.Migrations
+namespace ASPLAB_2.Migrations.Product
 {
     /// <inheritdoc />
     public partial class initial : Migration
@@ -13,27 +13,27 @@ namespace ASPLAB_2.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "Products",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Prise = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_Products", x => x.Id);
                 });
 
             migrationBuilder.InsertData(
-                table: "Users",
-                columns: new[] { "Id", "Email", "Name" },
+                table: "Products",
+                columns: new[] { "Id", "Name", "Prise" },
                 values: new object[,]
                 {
-                    { 1, "random1@gmail.com", "Tom" },
-                    { 2, "random2@gmail.com", "Bob" },
-                    { 3, "random3@gmail.com", "Sam" }
+                    { 1, "Tomato", 100 },
+                    { 2, "Potato", 120 },
+                    { 3, "Cucumber", 150 }
                 });
         }
 
@@ -41,7 +41,7 @@ namespace ASPLAB_2.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "Products");
         }
     }
 }

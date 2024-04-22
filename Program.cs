@@ -12,6 +12,7 @@ builder.Services.AddDbContext<UserContext>(options => options.UseSqlServer(conne
 builder.Services.AddDbContext<ProductContext>(options => options.UseSqlServer(connection));
 builder.Services.AddDbContext<OrderContext>(options => options.UseSqlServer(connection));
 builder.Services.AddDbContext<CategoryContext>(options => options.UseSqlServer(connection));
+builder.Services.AddDbContext<StationeryContext>(options => options.UseSqlServer(connection));
 
 
 // Add services to the container.

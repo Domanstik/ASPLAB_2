@@ -2,10 +2,10 @@
 
 namespace ASPLAB_2.Models
 {
-    public class Product
+    public class Stationery
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
-        public int? Prise { get; set; }
+        public string Type { get; set; } = string.Empty;
     }
 }

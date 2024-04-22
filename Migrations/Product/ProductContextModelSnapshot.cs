@@ -30,10 +30,6 @@ namespace ASPLAB_2.Migrations.Product
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -49,21 +45,18 @@ namespace ASPLAB_2.Migrations.Product
                         new
                         {
                             Id = 1,
-                            Category = "Vegatables",
                             Name = "Tomato",
                             Prise = 100
                         },
                         new
                         {
                             Id = 2,
-                            Category = "Vegatables",
                             Name = "Potato",
                             Prise = 120
                         },
                         new
                         {
                             Id = 3,
-                            Category = "Vegatables",
                             Name = "Cucumber",
                             Prise = 150
                         });

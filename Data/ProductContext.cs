@@ -14,9 +14,9 @@ namespace ASPLAB_2.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>().HasData(
-                    new Product { Id = 1, Name = "Tomato", Category = "Vegatables", Prise = 100 },
-                    new Product { Id = 2, Name = "Potato", Category = "Vegatables", Prise = 120 },
-                    new Product { Id = 3, Name = "Cucumber", Category = "Vegatables", Prise = 150 }
+                    new Product { Id = 1, Name = "Tomato", Prise = 100 },
+                    new Product { Id = 2, Name = "Potato", Prise = 120 },
+                    new Product { Id = 3, Name = "Cucumber", Prise = 150 }
             );
         }
     }

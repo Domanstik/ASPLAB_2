@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASPLAB_2.Migrations.Product
 {
     [DbContext(typeof(ProductContext))]
-    [Migration("20240415185022_initial")]
+    [Migration("20240422204932_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -33,10 +33,6 @@ namespace ASPLAB_2.Migrations.Product
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -52,21 +48,18 @@ namespace ASPLAB_2.Migrations.Product
                         new
                         {
                             Id = 1,
-                            Category = "Vegatables",
                             Name = "Tomato",
                             Prise = 100
                         },
                         new
                         {
                             Id = 2,
-                            Category = "Vegatables",
                             Name = "Potato",
                             Prise = 120
                         },
                         new
                         {
                             Id = 3,
-                            Category = "Vegatables",
                             Name = "Cucumber",
                             Prise = 150
                         });

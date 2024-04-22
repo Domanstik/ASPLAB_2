@@ -27,10 +27,10 @@ namespace ASPLAB_2.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Add(Category category_)
+        public async Task<IActionResult> Add(Category category_)
         {
-            dbCategoryContext.AddAsync(category_);
-            dbCategoryContext.SaveChangesAsync();
+            await dbCategoryContext.AddAsync(category_);
+            await dbCategoryContext.SaveChangesAsync();
 
             return RedirectToAction("Index", "Category");
         }

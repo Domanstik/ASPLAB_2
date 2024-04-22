@@ -3,19 +3,19 @@
 *@
 @{
 }
-@model ASPLAB_2.Models.Category
+@model ASPLAB_2.Models.Stationery
 
-<h1> Add Category</h1>
+<h1> Add Stationery</h1>
 
-<form method="post" asp-action="Add" asp-controller="Category">
+<form method="post" asp-action="Add" asp-controller="Stationery">
     <div class="mt-3">
         <label class=" form-label">Name</label>
         <input type="text" class="form-control" asp-for="Name" />
     </div>
 
     <div class="mt-3">
-        <label class=" form-label">Description</label>
-        <input type="text" class="form-control" asp-for="Description" />
+        <label class=" form-label">Type</label>
+        <input type="text" class="form-control" asp-for="Type" />
     </div>
 
     <div class="mt-3">

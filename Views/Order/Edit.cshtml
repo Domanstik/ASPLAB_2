@@ -4,13 +4,13 @@
 @{
 }
 
-@model ASPLAB_2.Models.Category
+@model ASPLAB_2.Models.Order
 
-<h1>Edit Category</h1>
+<h1>Edit Order</h1>
 
 @if (Model is null)
 {
-    <p>No Category was found</p>
+    <p>No Order was found</p>
 }
 else 
 {
@@ -21,20 +21,20 @@ else
         </div>
 
         <div class="mt-3">
-            <label class=" form-label">Name</label>
-            <input type="text" class="form-control" asp-for="Name" />
+            <label class=" form-label">User</label>
+            <input type="text" class="form-control" asp-for="User" />
         </div>
 
         <div class="mt-3">
-            <label class=" form-label">Description</label>
-            <input type="text" class="form-control" asp-for="Description" />
+            <label class=" form-label">ProductsCost</label>
+            <input type="text" class="form-control" asp-for="ProductsCost" />
         </div>
 
         <div class="mt-3">
             <button type="submit" class="btn btn-primary">Save</button>
             <button type="submit" class="btn btn-danger ms-3"
                     asp-action="Delete"
-                    asp-controller="Category">Delete</button>
+                    asp-controller="Order">Delete</button>
         </div>
     </form>
 }

@@ -3,19 +3,16 @@ using ASPLAB_2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
 namespace ASPLAB_2.Migrations
 {
-    [DbContext(typeof(UserContext))]
-    [Migration("20240415184949_initial")]
-    partial class initial
+    [DbContext(typeof(CategoryContext))]
+    partial class CategoryContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,7 +21,7 @@ namespace ASPLAB_2.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ASPLAB_2.Models.User", b =>
+            modelBuilder.Entity("ASPLAB_2.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,7 +29,7 @@ namespace ASPLAB_2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Email")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -42,26 +39,26 @@ namespace ASPLAB_2.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Categories");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            Email = "random1@gmail.com",
-                            Name = "Tom"
+                            Description = "Vegetables",
+                            Name = "Vegetables"
                         },
                         new
                         {
                             Id = 2,
-                            Email = "random2@gmail.com",
-                            Name = "Bob"
+                            Description = "Fruits",
+                            Name = "Fruits"
                         },
                         new
                         {
                             Id = 3,
-                            Email = "random3@gmail.com",
-                            Name = "Sam"
+                            Description = "Drinks",
+                            Name = "Drinks"
                         });
                 });
 #pragma warning restore 612, 618

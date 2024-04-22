@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace ASPLAB_2.Migrations.Category
+namespace ASPLAB_2.Migrations.Stationery
 {
-    [DbContext(typeof(CategoryContext))]
-    [Migration("20240415185009_initial")]
+    [DbContext(typeof(StationeryContext))]
+    [Migration("20240422204510_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -24,7 +24,7 @@ namespace ASPLAB_2.Migrations.Category
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ASPLAB_2.Models.Category", b =>
+            modelBuilder.Entity("ASPLAB_2.Models.Stationery", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,36 +32,36 @@ namespace ASPLAB_2.Migrations.Category
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Stationeries");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            Description = "Vegetables",
-                            Name = "Vegetables"
+                            Name = "Pen",
+                            Type = "sdf"
                         },
                         new
                         {
                             Id = 2,
-                            Description = "Fruits",
-                            Name = "Fruits"
+                            Name = "Pensil",
+                            Type = "sdf"
                         },
                         new
                         {
                             Id = 3,
-                            Description = "Drinks",
-                            Name = "Drinks"
+                            Name = "Сopybook",
+                            Type = "sdf"
                         });
                 });
 #pragma warning restore 612, 618

@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<ASPLAB_2.Models.Stationery>
+
+<h1>CStationeries</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stationery in Model)
+        {
+            <tr>
+                <td>@stationery.Id</td>
+                <td>@stationery.Name</td>
+                <td>@stationery.Type</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Stationery" asp-action="Edit" asp-route-id="@stationery.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p><a class="btn btn-primary" asp-action="Add" asp-controller="Stationery">Add</a></p>

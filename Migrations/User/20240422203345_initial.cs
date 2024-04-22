@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace ASPLAB_2.Migrations.Category
+namespace ASPLAB_2.Migrations.User
 {
     /// <inheritdoc />
     public partial class initial : Migration
@@ -13,27 +13,27 @@ namespace ASPLAB_2.Migrations.Category
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Categories",
+                name: "Users",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
+                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
 
             migrationBuilder.InsertData(
-                table: "Categories",
-                columns: new[] { "Id", "Description", "Name" },
+                table: "Users",
+                columns: new[] { "Id", "Email", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Vegetables", "Vegetables" },
-                    { 2, "Fruits", "Fruits" },
-                    { 3, "Drinks", "Drinks" }
+                    { 1, "random1@gmail.com", "Tom" },
+                    { 2, "random2@gmail.com", "Bob" },
+                    { 3, "random3@gmail.com", "Sam" }
                 });
         }
 
@@ -41,7 +41,7 @@ namespace ASPLAB_2.Migrations.Category
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "Users");
         }
     }
 }
